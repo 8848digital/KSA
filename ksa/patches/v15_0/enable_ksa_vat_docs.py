@@ -1,6 +1,6 @@
 import frappe
 
-from erpnext.regional.saudi_arabia.setup import add_permissions, add_print_formats
+from ksa.saudi_arabia.setup import add_permissions, add_print_formats
 
 
 def execute():

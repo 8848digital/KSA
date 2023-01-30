@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.permissions import add_permission, update_permission_property
-from erpnext.regional.saudi_arabia.wizard.operations.setup_ksa_vat_setting import (
+from ksa.saudi_arabia.wizard.operations.setup_ksa_vat_setting import (
 	create_ksa_vat_setting,
 )
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
@@ -168,6 +168,10 @@ def make_custom_fields():
 
 	create_custom_fields(custom_fields, ignore_validate=True, update=True)
 
+
+def create_company_settings(doc,method=None):
+	if doc.country == 'Saudi Arabia':
+		update_regional_tax_settings(doc.country,doc.name)
 
 def update_regional_tax_settings(country, company):
 	create_ksa_vat_setting(company)
