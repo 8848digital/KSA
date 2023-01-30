@@ -64,7 +64,7 @@ app_license = "MIT"
 # ------------
 
 # before_install = "ksa.install.before_install"
-# after_install = "ksa.saudi_arabia.setup.setup"
+after_install = "ksa.saudi_arabia.setup.setup"
 
 # Uninstallation
 # ------------
@@ -104,8 +104,11 @@ app_license = "MIT"
 
 doc_events = {
 	"Company": {
-        "on_trash": ["ksa.saudi_arabia.utils.delete_vat_settings_for_company"],
-        "after_insert":["ksa.saudi_arabia.setup.create_company_settings"]
+                "on_trash": ["ksa.saudi_arabia.utils.delete_vat_settings_for_company"],
+        },
+        "Item Tax Template":{
+                "after_insert":["ksa.saudi_arabia.setup.create_company_settings"]
+
         }
 }
 
