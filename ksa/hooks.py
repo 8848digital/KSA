@@ -64,7 +64,7 @@ app_license = "MIT"
 # ------------
 
 # before_install = "ksa.install.before_install"
-after_install = "ksa.saudi_arabia.setup.setup"
+# after_install = "ksa.saudi_arabia.setup.setup"
 
 # Uninstallation
 # ------------
