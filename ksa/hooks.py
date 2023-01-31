@@ -105,10 +105,8 @@ after_install = "ksa.saudi_arabia.setup.setup"
 doc_events = {
 	"Company": {
                 "on_trash": ["ksa.saudi_arabia.utils.delete_vat_settings_for_company"],
-        },
-        "Item Tax Template":{
-                "after_insert":["ksa.saudi_arabia.setup.create_company_settings"]
-
+                "on_update": ["ksa.saudi_arabia.wizard.operations.setup_tax_templates.setup_templates",
+                              "ksa.saudi_arabia.setup.create_company_settings"]
         }
 }
 

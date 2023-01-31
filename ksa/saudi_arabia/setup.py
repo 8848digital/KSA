@@ -170,8 +170,7 @@ def make_custom_fields():
 
 
 def create_company_settings(doc,method=None):
-	if doc.title == "KSA Excise 100%":
-		update_regional_tax_settings('Saudi Arabia',doc.company)
+	update_regional_tax_settings('Saudi Arabia',doc.name)
 
 def update_regional_tax_settings(country, company):
 	create_ksa_vat_setting(company)
