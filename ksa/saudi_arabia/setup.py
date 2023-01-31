@@ -170,7 +170,8 @@ def make_custom_fields():
 
 
 def create_company_settings(doc,method=None):
-	update_regional_tax_settings('Saudi Arabia',doc.name)
+	update_regional_tax_settings(doc.country,doc.name)
 
 def update_regional_tax_settings(country, company):
-	create_ksa_vat_setting(company)
+	if country == 'Saudi Arabia':
+		create_ksa_vat_setting(company)
