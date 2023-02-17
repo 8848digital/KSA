@@ -107,7 +107,17 @@ doc_events = {
                 "on_trash": ["ksa.saudi_arabia.utils.delete_vat_settings_for_company"],
                 "on_update": ["ksa.saudi_arabia.wizard.operations.setup_tax_templates.setup_templates",
                               "ksa.saudi_arabia.setup.create_company_settings"]
-        }
+        },
+        "Sales Invoice": {
+		"on_submit": [
+                        "ksa.saudi_arabia.utils.create_qr_code",
+		],
+		"on_cancel": [
+			"ksa.saudi_arabia.utils.delete_qr_code_file"
+		]
+	},
+        "POS Invoice": {"on_submit": ["ksa.saudi_arabia.utils.create_qr_code"]},
+
 }
 
 # Scheduled Tasks
