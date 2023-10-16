@@ -177,7 +177,8 @@ def get_tax_data_for_each_vat_setting(vat_setting, filters, doctype):
 				"parent": invoice.name,
 				"item_tax_template": vat_setting.item_tax_template,
 			},
-			fields=["item_code", "net_amount"],
+			fields=["item_code", "sum(net_amount) as net_amount"],
+			group_by="item_code, item_tax_template"
 		)
 
 		for item in invoice_items:
